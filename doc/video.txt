@@ -1,4 +1,8 @@
     11/02/23
+This means the best that we good do is 3.3 * .010 = 33mW
+This raises several questions. First would this be a good target 
+power comsumption.
+ 
 This would be great if you were just starting your project and you had 
 a goal of what your power comsumption should be.  This is not the case
 in our case pico_mqtt is currently in ver 0.0.11
