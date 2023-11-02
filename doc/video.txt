@@ -1,4 +1,15 @@
     11/02/23
+needed info
+git clone https://github.com/develone/pico-extras.git
+https://github.com/develone/pico-playground.git
+
+export PICO_EXTRAS_PATH=/home/devel/pico-extras
+cd pico-playground
+mkdir build
+cd build
+cmake ../
+make
+see the trees of hello_dormant & hello_sleep 
 This means the best that we good do is 3.3 * .010 = 33mW
 This raises several questions. First would this be a good target 
 power comsumption.
@@ -71,3 +82,242 @@ This has not been discussed.
     3.3 Volts @ 0.029 A = 0.0957
     
     sleep_ms(1000) 3.3 @ 0.026 = 0.0858
+
+devel@pi4-20:~/pico-playground/build/sleep $ tree hello_dormant/
+hello_dormant/
+├── CMakeFiles
+│   ├── CMakeDirectoryInformation.cmake
+│   ├── hello_dormant.dir
+│   │   ├── ASM.includecache
+│   │   ├── build.make
+│   │   ├── C.includecache
+│   │   ├── cmake_clean.cmake
+│   │   ├── CXX.includecache
+│   │   ├── DependInfo.cmake
+│   │   ├── depend.internal
+│   │   ├── depend.make
+│   │   ├── flags.make
+│   │   ├── hello_dormant.c.obj
+│   │   ├── home
+│   │   │   └── devel
+│   │   │       ├── pico-extras
+│   │   │       │   └── src
+│   │   │       │       └── rp2_common
+│   │   │       │           ├── hardware_rosc
+│   │   │       │           │   └── rosc.c.obj
+│   │   │       │           └── pico_sleep
+│   │   │       │               └── sleep.c.obj
+│   │   │       └── sdk
+│   │   │           └── pico-sdk
+│   │   │               └── src
+│   │   │                   ├── common
+│   │   │                   │   ├── pico_sync
+│   │   │                   │   │   ├── critical_section.c.obj
+│   │   │                   │   │   ├── lock_core.c.obj
+│   │   │                   │   │   ├── mutex.c.obj
+│   │   │                   │   │   └── sem.c.obj
+│   │   │                   │   ├── pico_time
+│   │   │                   │   │   ├── time.c.obj
+│   │   │                   │   │   └── timeout_helper.c.obj
+│   │   │                   │   └── pico_util
+│   │   │                   │       ├── datetime.c.obj
+│   │   │                   │       ├── pheap.c.obj
+│   │   │                   │       └── queue.c.obj
+│   │   │                   └── rp2_common
+│   │   │                       ├── hardware_claim
+│   │   │                       │   └── claim.c.obj
+│   │   │                       ├── hardware_clocks
+│   │   │                       │   └── clocks.c.obj
+│   │   │                       ├── hardware_divider
+│   │   │                       │   └── divider.S.obj
+│   │   │                       ├── hardware_gpio
+│   │   │                       │   └── gpio.c.obj
+│   │   │                       ├── hardware_irq
+│   │   │                       │   ├── irq.c.obj
+│   │   │                       │   └── irq_handler_chain.S.obj
+│   │   │                       ├── hardware_pll
+│   │   │                       │   └── pll.c.obj
+│   │   │                       ├── hardware_rtc
+│   │   │                       │   └── rtc.c.obj
+│   │   │                       ├── hardware_sync
+│   │   │                       │   └── sync.c.obj
+│   │   │                       ├── hardware_timer
+│   │   │                       │   └── timer.c.obj
+│   │   │                       ├── hardware_uart
+│   │   │                       │   └── uart.c.obj
+│   │   │                       ├── hardware_vreg
+│   │   │                       │   └── vreg.c.obj
+│   │   │                       ├── hardware_watchdog
+│   │   │                       │   └── watchdog.c.obj
+│   │   │                       ├── hardware_xosc
+│   │   │                       │   └── xosc.c.obj
+│   │   │                       ├── pico_bit_ops
+│   │   │                       │   └── bit_ops_aeabi.S.obj
+│   │   │                       ├── pico_bootrom
+│   │   │                       │   └── bootrom.c.obj
+│   │   │                       ├── pico_divider
+│   │   │                       │   └── divider.S.obj
+│   │   │                       ├── pico_double
+│   │   │                       │   ├── double_aeabi.S.obj
+│   │   │                       │   ├── double_init_rom.c.obj
+│   │   │                       │   ├── double_math.c.obj
+│   │   │                       │   └── double_v1_rom_shim.S.obj
+│   │   │                       ├── pico_float
+│   │   │                       │   ├── float_aeabi.S.obj
+│   │   │                       │   ├── float_init_rom.c.obj
+│   │   │                       │   ├── float_math.c.obj
+│   │   │                       │   └── float_v1_rom_shim.S.obj
+│   │   │                       ├── pico_int64_ops
+│   │   │                       │   └── pico_int64_ops_aeabi.S.obj
+│   │   │                       ├── pico_malloc
+│   │   │                       │   └── pico_malloc.c.obj
+│   │   │                       ├── pico_mem_ops
+│   │   │                       │   └── mem_ops_aeabi.S.obj
+│   │   │                       ├── pico_platform
+│   │   │                       │   └── platform.c.obj
+│   │   │                       ├── pico_printf
+│   │   │                       │   └── printf.c.obj
+│   │   │                       ├── pico_runtime
+│   │   │                       │   └── runtime.c.obj
+│   │   │                       ├── pico_standard_link
+│   │   │                       │   ├── binary_info.c.obj
+│   │   │                       │   ├── crt0.S.obj
+│   │   │                       │   └── new_delete.cpp.obj
+│   │   │                       ├── pico_stdio
+│   │   │                       │   └── stdio.c.obj
+│   │   │                       ├── pico_stdio_uart
+│   │   │                       │   └── stdio_uart.c.obj
+│   │   │                       └── pico_stdlib
+│   │   │                           └── stdlib.c.obj
+│   │   ├── link.txt
+│   │   └── progress.make
+│   └── progress.marks
+├── cmake_install.cmake
+├── hello_dormant.bin
+├── hello_dormant.dis
+├── hello_dormant.elf
+├── hello_dormant.elf.map
+├── hello_dormant.hex
+├── hello_dormant.uf2
+└── Makefile
+
+devel@pi4-20:~/pico-playground/build/sleep $ tree hello_sleep/
+hello_sleep/
+├── CMakeFiles
+│   ├── CMakeDirectoryInformation.cmake
+│   ├── hello_sleep.dir
+│   │   ├── ASM.includecache
+│   │   ├── build.make
+│   │   ├── C.includecache
+│   │   ├── cmake_clean.cmake
+│   │   ├── CXX.includecache
+│   │   ├── DependInfo.cmake
+│   │   ├── depend.internal
+│   │   ├── depend.make
+│   │   ├── flags.make
+│   │   ├── hello_sleep.c.obj
+│   │   ├── home
+│   │   │   └── devel
+│   │   │       ├── pico-extras
+│   │   │       │   └── src
+│   │   │       │       └── rp2_common
+│   │   │       │           ├── hardware_rosc
+│   │   │       │           │   └── rosc.c.obj
+│   │   │       │           └── pico_sleep
+│   │   │       │               └── sleep.c.obj
+│   │   │       └── sdk
+│   │   │           └── pico-sdk
+│   │   │               └── src
+│   │   │                   ├── common
+│   │   │                   │   ├── pico_sync
+│   │   │                   │   │   ├── critical_section.c.obj
+│   │   │                   │   │   ├── lock_core.c.obj
+│   │   │                   │   │   ├── mutex.c.obj
+│   │   │                   │   │   └── sem.c.obj
+│   │   │                   │   ├── pico_time
+│   │   │                   │   │   ├── time.c.obj
+│   │   │                   │   │   └── timeout_helper.c.obj
+│   │   │                   │   └── pico_util
+│   │   │                   │       ├── datetime.c.obj
+│   │   │                   │       ├── pheap.c.obj
+│   │   │                   │       └── queue.c.obj
+│   │   │                   └── rp2_common
+│   │   │                       ├── hardware_claim
+│   │   │                       │   └── claim.c.obj
+│   │   │                       ├── hardware_clocks
+│   │   │                       │   └── clocks.c.obj
+│   │   │                       ├── hardware_divider
+│   │   │                       │   └── divider.S.obj
+│   │   │                       ├── hardware_gpio
+│   │   │                       │   └── gpio.c.obj
+│   │   │                       ├── hardware_irq
+│   │   │                       │   ├── irq.c.obj
+│   │   │                       │   └── irq_handler_chain.S.obj
+│   │   │                       ├── hardware_pll
+│   │   │                       │   └── pll.c.obj
+│   │   │                       ├── hardware_rtc
+│   │   │                       │   └── rtc.c.obj
+│   │   │                       ├── hardware_sync
+│   │   │                       │   └── sync.c.obj
+│   │   │                       ├── hardware_timer
+│   │   │                       │   └── timer.c.obj
+│   │   │                       ├── hardware_uart
+│   │   │                       │   └── uart.c.obj
+│   │   │                       ├── hardware_vreg
+│   │   │                       │   └── vreg.c.obj
+│   │   │                       ├── hardware_watchdog
+│   │   │                       │   └── watchdog.c.obj
+│   │   │                       ├── hardware_xosc
+│   │   │                       │   └── xosc.c.obj
+│   │   │                       ├── pico_bit_ops
+│   │   │                       │   └── bit_ops_aeabi.S.obj
+│   │   │                       ├── pico_bootrom
+│   │   │                       │   └── bootrom.c.obj
+│   │   │                       ├── pico_divider
+│   │   │                       │   └── divider.S.obj
+│   │   │                       ├── pico_double
+│   │   │                       │   ├── double_aeabi.S.obj
+│   │   │                       │   ├── double_init_rom.c.obj
+│   │   │                       │   ├── double_math.c.obj
+│   │   │                       │   └── double_v1_rom_shim.S.obj
+│   │   │                       ├── pico_float
+│   │   │                       │   ├── float_aeabi.S.obj
+│   │   │                       │   ├── float_init_rom.c.obj
+│   │   │                       │   ├── float_math.c.obj
+│   │   │                       │   └── float_v1_rom_shim.S.obj
+│   │   │                       ├── pico_int64_ops
+│   │   │                       │   └── pico_int64_ops_aeabi.S.obj
+│   │   │                       ├── pico_malloc
+│   │   │                       │   └── pico_malloc.c.obj
+│   │   │                       ├── pico_mem_ops
+│   │   │                       │   └── mem_ops_aeabi.S.obj
+│   │   │                       ├── pico_platform
+│   │   │                       │   └── platform.c.obj
+│   │   │                       ├── pico_printf
+│   │   │                       │   └── printf.c.obj
+│   │   │                       ├── pico_runtime
+│   │   │                       │   └── runtime.c.obj
+│   │   │                       ├── pico_standard_link
+│   │   │                       │   ├── binary_info.c.obj
+│   │   │                       │   ├── crt0.S.obj
+│   │   │                       │   └── new_delete.cpp.obj
+│   │   │                       ├── pico_stdio
+│   │   │                       │   └── stdio.c.obj
+│   │   │                       ├── pico_stdio_uart
+│   │   │                       │   └── stdio_uart.c.obj
+│   │   │                       └── pico_stdlib
+│   │   │                           └── stdlib.c.obj
+│   │   ├── link.txt
+│   │   └── progress.make
+│   └── progress.marks
+├── cmake_install.cmake
+├── hello_sleep.bin
+├── hello_sleep.dis
+├── hello_sleep.elf
+├── hello_sleep.elf.map
+├── hello_sleep.hex
+├── hello_sleep.uf2
+└── Makefile
+
+45 directories, 70 files
+
