@@ -1,0 +1,69 @@
+    11/02/23
+This would be great if you were just starting your project and you had 
+a goal of what your power comsumption should be.  This is not the case
+in our case pico_mqtt is currently in ver 0.0.11
+This is our baseline baselone of our project.
+  
+This does show some very good points that now I feel that you need to know.
+First how do you create a project.
+Next how to use cmake to generate the Makefiles for your project.
+Also how to see examine the pico-sdk to see what codes are doing.
+Which brings up the type of pico & pico_w files.
+	sleep_baseline.uf2
+	sleep_baseline.elf
+
+	sleep_baseline.dis
+	sleep_baseline.elf.map
+if scripts-rpi/mosquitto/mos.sh is running 
+	What is the pico_w doing?
+if scripts-rpi/mosquitto/mos.sh is nit running
+	What is the pico_w doing?
+if scripts-rpi/mosquitto/mos-q.sh is running 
+	What is the pico_w doing?
+if scripts-rpi/mosquitto/mos-q.sh is nit running
+	What is the pico_w doing?
+When are the 4 above states being used depends on how you 
+want to control the watering.
+This has not been discussed.
+
+    Using
+    https://github.com/develone/pico-project-generator.git
+    git clone https://github.com/develone/pico-project-generator.git
+    
+    cd pico-project-generator
+    ./pico_project.py sleep_baseline
+    The following needs to be copied to the file sleep_baseline.c
+    
+    int main()
+    {
+            while (1)
+            {
+                    tight_loop_contents();
+            }
+    }
+    
+    cd sleep_baseline/build
+    make
+     
+    cd sleep_baseline/build
+    make
+    
+    ./pico_project.py sleep_ms
+    The following needs to be copied to the file sleep_ms.c
+    
+    int main()
+    {
+            while (1)
+            {
+                    sleep_ms(1000);
+            }
+    }
+    cd sleep_ms/build
+    make
+    
+    https://www.youtube.com/watch?v=05o5QOZkpwg
+    checking out the deep sleep
+    is baseline the rp2040 the way we're
+    3.3 Volts @ 0.029 A = 0.0957
+    
+    sleep_ms(1000) 3.3 @ 0.026 = 0.0858
