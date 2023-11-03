@@ -1,13 +1,37 @@
     11/02/23
+devel@pi4-30:~/pico-playground/build $ find . -name *.uf2
+./audio/sine_wave/sine_wave_spdif.uf2
+./audio/sine_wave/sine_wave_i2s.uf2
+./audio/sine_wave/sine_wave_pwm.uf2
+./scanvideo/hscroll_dma_tiles/hscroll_dma_tiles.uf2
+./scanvideo/flash_stream/flash_stream.uf2
+./scanvideo/mandelbrot/mandelbrot.uf2
+./scanvideo/demo1/demo1.uf2
+./scanvideo/scanvideo_minimal/scanvideo_minimal.uf2
+./scanvideo/textmode/textmode.uf2
+./scanvideo/mario_tiles/mario_tiles.uf2
+./scanvideo/sprite_demo/sprite_demo.uf2
+./scanvideo/test_pattern/test_pattern.uf2
+./sleep/hello_dormant/hello_dormant.uf2
+./sleep/hello_sleep/hello_sleep.uf2
+./apps/popcorn/popcorn.uf2
+./apps/usb_sound_card/usb_sound_card.uf2
+./stdio/pio/stdio_pio.uf2
+
 needed info
 git clone https://github.com/develone/pico-extras.git
-https://github.com/develone/pico-playground.git
+git clone https://github.com/develone/pico-playground.git
 
 export PICO_EXTRAS_PATH=/home/devel/pico-extras
+
 cd pico-playground
+
 mkdir build
+
 cd build
+
 cmake ../
+
 make
 see the trees of hello_dormant & hello_sleep 
 This means the best that we good do is 3.3 * .010 = 33mW
