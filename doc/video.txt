@@ -1,4 +1,7 @@
-    11/02/23
+    11/04/23
+cmake -DPICO_BOARD=pico_w  -DHOSTNAME="remote5" -DWIFI_SSID="WIFI_SSID" -DWIFI_PASSWORD="WIFI_PASSWORD" -DFREERTOS_KERNEL_PATH:PATH=/home/devel/FreeRTOS-Kernel ..
+cmake -DPICO_BOARD=pico_w   -DWIFI_SSID="WIFI_SSID" -DWIFI_PASSWORD="WIFI_PASSWORD" -DFREERTOS_KERNEL_PATH:PATH=/home/devel/FreeRTOS-Kernel ..
+11/02/23
 devel@pi4-30:~/pico-playground/build $ find . -name *.uf2
 ./audio/sine_wave/sine_wave_spdif.uf2
 ./audio/sine_wave/sine_wave_i2s.uf2
