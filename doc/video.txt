@@ -1,4 +1,9 @@
     11/04/23
+git clone https://github.com/develone/pico-extras.git
+git clone https://github.com/develone/pico-playground.git -b dev
+
+export PICO_EXTRAS_PATH=/home/devel/pico-extras
+
 cmake -DPICO_BOARD=pico_w  -DHOSTNAME="remote5" -DWIFI_SSID="WIFI_SSID" -DWIFI_PASSWORD="WIFI_PASSWORD" -DFREERTOS_KERNEL_PATH:PATH=/home/devel/FreeRTOS-Kernel ..
 cmake -DPICO_BOARD=pico_w   -DWIFI_SSID="WIFI_SSID" -DWIFI_PASSWORD="WIFI_PASSWORD" -DFREERTOS_KERNEL_PATH:PATH=/home/devel/FreeRTOS-Kernel ..
 11/02/23
