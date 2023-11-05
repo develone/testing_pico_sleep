@@ -3,6 +3,23 @@ git clone https://github.com/develone/pico-extras.git
 git clone https://github.com/develone/pico-playground.git -b dev
 
 export PICO_EXTRAS_PATH=/home/devel/pico-extras
+devel@pi4-20:~ $ ./scripts-rpi/mosquitto/mos.sh 
+1699150936: mosquitto version 2.0.11 starting
+1699150936: Config loaded from /etc/mosquitto/mosquitto.conf.
+1699150936: Opening ipv4 listen socket on port 1883.
+1699150936: Opening ipv6 listen socket on port 1883.
+1699150936: mosquitto version 2.0.11 running
+devel@pi4-20:~ $ 1699150945: New connection from 192.168.16.114:53592 on port 1883.
+1699150945: New client connected from 192.168.16.114:53592 as PicoW (p2, c1, k10, u'testuser').
+
+devel@pi4-20:~/pico-playground $ ./pi_tcp_tests/cli5
+Socket created successfully
+Connected with server successfully
+Starting FreeRTOS on core 0: ver 0.0.12 PicoW Connected. iperf server 192.168.16.114 4001  mqtt_ip = 0x742aa8c0 mqtt_port = 1883  batt task 0x050 -> 0.064453 V sleep task  05/11/2023 02:23:17  sleep task batt task 0x050 -> 0.064453 V 05/11/2023 02:23:48  sleep task batt task 0x050 -> 0.064453 VAlarm Fired Sunday 5 November 2:24:17 2023  sleep task batt task 0x050 -> 0.064453 V 05/1
+
+1699151194: New connection from 192.168.16.114:61549 on port 1883.
+1699151194: Client PicoW already connected, closing old connection.
+1699151194: New client connected from 192.168.16.114:61549 as PicoW (p2, c1, k10, u'testuser')
 
 cmake -DPICO_BOARD=pico_w  -DHOSTNAME="remote5" -DWIFI_SSID="WIFI_SSID" -DWIFI_PASSWORD="WIFI_PASSWORD" -DFREERTOS_KERNEL_PATH:PATH=/home/devel/FreeRTOS-Kernel ..
 cmake -DPICO_BOARD=pico_w   -DWIFI_SSID="WIFI_SSID" -DWIFI_PASSWORD="WIFI_PASSWORD" -DFREERTOS_KERNEL_PATH:PATH=/home/devel/FreeRTOS-Kernel ..
